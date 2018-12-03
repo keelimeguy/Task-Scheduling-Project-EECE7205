@@ -1,0 +1,275 @@
+\documentclass{article}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{pgfplots}
+\usepackage[final]{pdfpages}
+\usepackage{xcolor}
+\definecolor{t0}{HTML}{308774}
+\definecolor{t1}{HTML}{32D102}
+\definecolor{t2}{HTML}{6706D7}
+\definecolor{t3}{HTML}{E805DA}
+\definecolor{t4}{HTML}{846A32}
+\definecolor{t5}{HTML}{C3BB81}
+\definecolor{t6}{HTML}{E3C29B}
+\definecolor{t7}{HTML}{621792}
+\definecolor{t8}{HTML}{73C8EB}
+\definecolor{t9}{HTML}{5BB682}
+\definecolor{t10}{HTML}{575EC8}
+\definecolor{t11}{HTML}{7A171A}
+\definecolor{t12}{HTML}{C826A6}
+
+\usetikzlibrary{decorations.pathreplacing, positioning, arrows.meta}
+\pgfplotsset{compat=1.15}
+\newcommand{\nl}{\hfill \break}
+\begin{document}
+
+\includepdf[pages=-]{../sample/sample13_tex_dot.pdf}
+%% Schedule 1
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+
+\draw[thick, -Triangle] (0,0) -- (16.0cm,0) node[font=\scriptsize,above left=3pt and -8pt]{};
+
+\foreach \x in {1.0,2.0,3.0,4.0,
+5.0,6.0,7.0,8.0,9.0,
+10.0,11.0,12.0,13.0,14.0,
+15.0}
+\draw (\x cm,3pt) -- (\x cm,-3pt);
+
+\foreach \x/\descr in {0/0,4.0/14.25,8.0/28.5,12.0/42.75,16.0/57.0}
+\node[font=\scriptsize, text height=1.75ex, text depth=.5ex] at (\x,-.3) {$\descr$};
+
+%% Core 0 ws
+\foreach \x/\col/\xe/\xoff in
+{
+3.5439719298245618/t1/4.75879298245614/1.7000000000000002,
+2.5512140350877193/t3/3.5439719298245618/1.7000000000000002,
+0.20764884210526316/t5/1.4102315789473685/1.7000000000000002,
+1.4102315789473685/t6/2.5512140350877193/1.7000000000000002,
+4.75879298245614/t7/5.48081403508772/1.7000000000000002,
+5.48081403508772/t8/5.942484210526316/1.7000000000000002,
+6.582175438596492/t9/7.655971929824561/1.7000000000000002,
+5.942484210526316/t10/6.582175438596492/1.7000000000000002,
+7.655971929824561/t12/8.089712280701754/1.7000000000000002
+}
+\filldraw[fill=\col, line width=1pt]
+(\x,\xoff) rectangle (\xe,\xoff+.2);
+\node[font=\scriptsize, text height=1.75ex,
+text depth=.5ex] at (-.5,1.8000000000000003) {ws};
+
+%% Core 0 c
+\foreach \x/\col/\xe/\xoff in
+{
+1.4102315789473685/t5/3.735578947368421/1.0,
+3.735578947368421/t6/5.737908771929824/1.0,
+6.582175438596492/t10/9.314975438596493/1.0,
+12.761936842105262/t12/14.413052631578948/1.0,
+3.5439719298245618/t3/5.937487719298246/1.1,
+7.655971929824561/t9/9.30138947368421/1.1,
+4.75879298245614/t1/7.348912280701754/1.2000000000000002,
+9.074301754385964/t8/12.761936842105262/1.2000000000000002,
+5.48081403508772/t7/9.074301754385964/1.3000000000000003
+}
+\filldraw[fill=\col, line width=1pt]
+(\x,\xoff) rectangle (\xe,\xoff+.2);
+\node[font=\scriptsize, text height=1.75ex,
+text depth=.5ex] at (-.5,1.2500000000000004) {c};
+
+%% Core 0 wr
+\foreach \x/\col/\xe/\xoff in
+{
+3.735578947368421/t5/5.097291228070175/0.4,
+5.737908771929824/t6/8.200477192982456/0.4,
+9.074301754385964/t7/10.078259649122806/0.4,
+12.761936842105262/t8/14.807157894736843/0.4,
+5.937487719298246/t3/8.184757894736842/0.5,
+9.30138947368421/t9/11.325670175438598/0.5,
+14.413052631578948/t12/15.977684210526315/0.5,
+7.348912280701754/t1/9.040336842105264/0.6,
+9.314975438596493/t10/11.550119298245614/0.6
+}
+\filldraw[fill=\col, line width=1pt]
+(\x,\xoff) rectangle (\xe,\xoff+.2);
+\node[font=\scriptsize, text height=1.75ex,
+text depth=.5ex] at (-.5,0.6) {wr};
+
+%% Core 2
+\foreach \x/\col/\xe/\xoff in
+{
+0.20764884210526316/t4/1.5287915789473685/-0.7999999999999999
+}
+\filldraw[fill=\col, line width=1pt]
+(\x,\xoff) rectangle (\xe,\xoff+.2);
+\node[font=\scriptsize, text height=1.75ex,
+text depth=.5ex] at (-.5,-0.7) {core 2};
+
+%% Core 3
+\foreach \x/\col/\xe/\xoff in
+{
+0.0/t0/0.20764884210526316/-1.2000000000000002,
+0.20764884210526316/t2/0.9364912280701755/-1.2000000000000002,
+0.9364912280701755/t11/2.543722105263158/-1.2000000000000002
+}
+\filldraw[fill=\col, line width=1pt]
+(\x,\xoff) rectangle (\xe,\xoff+.2);
+\node[font=\scriptsize, text height=1.75ex,
+text depth=.5ex] at (-.5,-1.1) {core 3};
+
+\end{tikzpicture}
+\end{center}
+\nl
+%% Schedule 2
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+
+\draw[thick, -Triangle] (0,0) -- (16.0cm,0) node[font=\scriptsize,above left=3pt and -8pt]{};
+
+\foreach \x in {1.0,2.0,3.0,4.0,
+5.0,6.0,7.0,8.0,9.0,
+10.0,11.0,12.0,13.0,14.0,
+15.0}
+\draw (\x cm,3pt) -- (\x cm,-3pt);
+
+\foreach \x/\descr in {0/0,4.0/28.0,8.0/56.0,12.0/84.0,16.0/112.0}
+\node[font=\scriptsize, text height=1.75ex, text depth=.5ex] at (\x,-.3) {$\descr$};
+
+%% Core 0 ws
+\foreach \x/\col/\xe/\xoff in
+{
+0.0/t0/0.5083614285714286/1.7000000000000002,
+0.5083614285714286/t2/1.0692771428571428/1.7000000000000002,
+2.828285714285714/t3/3.333542857142857/1.7000000000000002,
+1.0692771428571428/t4/1.6355857142857142/1.7000000000000002,
+1.6355857142857142/t5/2.2476142857142856/1.7000000000000002,
+2.2476142857142856/t6/2.828285714285714/1.7000000000000002,
+3.333542857142857/t7/3.701/1.7000000000000002,
+9.81572857142857/t8/10.050685714285715/1.7000000000000002,
+10.050685714285715/t10/10.376228571428571/1.7000000000000002,
+14.098628571428572/t12/14.319428571428572/1.7000000000000002
+}
+\filldraw[fill=\col, line width=1pt]
+(\x,\xoff) rectangle (\xe,\xoff+.2);
+\node[font=\scriptsize, text height=1.75ex,
+text depth=.5ex] at (-.5,1.8000000000000003) {ws};
+
+%% Core 0 c
+\foreach \x/\col/\xe/\xoff in
+{
+0.5083614285714286/t0/2.1930714285714283/1.0,
+2.1930714285714283/t2/4.1183/1.0,
+4.1183/t6/5.1373428571428565/1.0,
+10.050685714285715/t8/11.927428571428573/1.0,
+14.319428571428572/t12/15.159714285714285/1.0,
+2.1930714285714283/t4/3.7012/1.1,
+3.7012/t7/5.530028571428572/1.1,
+10.376228571428571/t10/11.767042857142856/1.1,
+2.2476142857142856/t5/3.431042857142857/1.2000000000000002,
+3.333542857142857/t3/4.551657142857143/1.3000000000000003
+}
+\filldraw[fill=\col, line width=1pt]
+(\x,\xoff) rectangle (\xe,\xoff+.2);
+\node[font=\scriptsize, text height=1.75ex,
+text depth=.5ex] at (-.5,1.2500000000000004) {c};
+
+%% Core 0 wr
+\foreach \x/\col/\xe/\xoff in
+{
+2.1930714285714283/t0/3.0075857142857143/0.4,
+3.431042857142857/t5/4.124057142857143/0.4,
+4.551657142857143/t3/5.695357142857143/0.4,
+11.767042857142856/t10/12.904571428571428/0.4,
+15.159714285714285/t12/15.956/0.4,
+3.7012/t4/4.7806/0.5,
+5.1373428571428565/t6/6.390614285714285/0.5,
+11.927428571428573/t8/12.968285714285715/0.5,
+4.1183/t2/5.045042857142858/0.6,
+5.530028571428572/t7/6.040971428571429/0.6
+}
+\filldraw[fill=\col, line width=1pt]
+(\x,\xoff) rectangle (\xe,\xoff+.2);
+\node[font=\scriptsize, text height=1.75ex,
+text depth=.5ex] at (-.5,0.6) {wr};
+
+%% Core 1
+\foreach \x/\col/\xe/\xoff in
+{
+3.0075857142857143/t11/14.098628571428572/-0.7999999999999999
+}
+\filldraw[fill=\col, line width=1pt]
+(\x,\xoff) rectangle (\xe,\xoff+.2);
+\node[font=\scriptsize, text height=1.75ex,
+text depth=.5ex] at (-.5,-0.7) {core 1};
+
+%% Core 2
+\foreach \x/\col/\xe/\xoff in
+{
+3.0075857142857143/t1/9.81572857142857/-1.2000000000000002
+}
+\filldraw[fill=\col, line width=1pt]
+(\x,\xoff) rectangle (\xe,\xoff+.2);
+\node[font=\scriptsize, text height=1.75ex,
+text depth=.5ex] at (-.5,-1.1) {core 2};
+
+%% Core 3
+\foreach \x/\col/\xe/\xoff in
+{
+6.390614285714285/t9/7.342557142857143/-1.6
+}
+\filldraw[fill=\col, line width=1pt]
+(\x,\xoff) rectangle (\xe,\xoff+.2);
+\node[font=\scriptsize, text height=1.75ex,
+text depth=.5ex] at (-.5,-1.5) {core 3};
+
+\end{tikzpicture}
+\end{center}
+\nl
+%% Schedule 3
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+
+\draw[thick, -Triangle] (0,0) -- (16.0cm,0) node[font=\scriptsize,above left=3pt and -8pt]{};
+
+\foreach \x in {1.0,2.0,3.0,4.0,
+5.0,6.0,7.0,8.0,9.0,
+10.0,11.0,12.0,13.0,14.0,
+15.0}
+\draw (\x cm,3pt) -- (\x cm,-3pt);
+
+\foreach \x/\descr in {0/0,4.0/59.25,8.0/118.5,12.0/177.75,16.0/237.0}
+\node[font=\scriptsize, text height=1.75ex, text depth=.5ex] at (\x,-.3) {$\descr$};
+
+%% Core 2
+\foreach \x/\col/\xe/\xoff in
+{
+3.9675004219409282/t1/7.184877637130802/-0.7999999999999999,
+0.9601080168776371/t3/3.9675004219409282/-0.7999999999999999,
+0.6423662447257384/t4/0.9601080168776371/-0.7999999999999999,
+7.184877637130802/t9/8.155476793248946/-0.7999999999999999,
+8.155476793248946/t10/10.41957805907173/-0.7999999999999999,
+0.04994086075949367/t11/0.6423662447257384/-0.7999999999999999
+}
+\filldraw[fill=\col, line width=1pt]
+(\x,\xoff) rectangle (\xe,\xoff+.2);
+\node[font=\scriptsize, text height=1.75ex,
+text depth=.5ex] at (-.5,-0.7) {core 2};
+
+%% Core 3
+\foreach \x/\col/\xe/\xoff in
+{
+0.0/t0/0.04994086075949367/-1.2000000000000002,
+0.04994086075949367/t2/0.22523206751054853/-1.2000000000000002,
+0.22523206751054853/t5/3.627605063291139/-1.2000000000000002,
+3.627605063291139/t6/6.495453164556961/-1.2000000000000002,
+6.495453164556961/t7/8.129552742616033/-1.2000000000000002,
+8.129552742616033/t8/11.641518987341772/-1.2000000000000002,
+11.641518987341772/t12/15.969822784810127/-1.2000000000000002
+}
+\filldraw[fill=\col, line width=1pt]
+(\x,\xoff) rectangle (\xe,\xoff+.2);
+\node[font=\scriptsize, text height=1.75ex,
+text depth=.5ex] at (-.5,-1.1) {core 3};
+
+\end{tikzpicture}
+\end{center}
+\nl
+
+\end{document}
